@@ -27,7 +27,7 @@ while (true)
         {
             Console.WriteLine($"{counter++}: {price:C}");
             subTotal = subTotal + price;
-            taxAmount = total * tax;
+            taxAmount = subTotal * tax;
             total = subTotal + taxAmount;
         }
     }
@@ -40,7 +40,8 @@ while (true)
 
 // --------------------------------------------------
 Console.WriteLine($"Amount of items: {counter}");
+Console.WriteLine($"Average Item Price: {subTotal / counter}");
 Console.WriteLine($"Subtotal: {subTotal:C}");
 Console.WriteLine($"Tax: {taxAmount:C}");
 Console.WriteLine($"Total: {total:C}");
-//Console.WriteLine($"");
+
