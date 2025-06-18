@@ -24,19 +24,18 @@ namespace Lab_3
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            string gameSearched = searchInput.Text;
+            string gameSearched = searchInput.Text.ToLower();
 
             bool found = false;
 
-            for (int i = 0; i < games.Count; i++)
+            for (int i = 0; i < games.Count && found == false; i++)
             {
-                if (games[i].ToLower().Contains(gameSearched.ToLower()))
+                if (games[i].ToLower().Contains(gameSearched) || publishers[i].ToLower().Contains(gameSearched))
                 {
                     nameLbl.Text = games[i];
                     publisherLbl.Text = publishers[i];
                     priceLbl.Text = prices[i].ToString();
                     found = true;
-                    break;
                 }
             }
             if (!found)

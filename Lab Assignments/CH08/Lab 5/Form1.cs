@@ -21,17 +21,48 @@ namespace Lab_5
         {
             string number = numberInput.Text;
 
-            int visibleDigits = 4;
-            char poundSign = '#';
+            resultLbl.Text = string.Empty;
 
-            if (number.Length > visibleDigits)
+            // total number of digits
+            int totalDigits = 0;
+
+            // gathers total number of only digits
+            for (int i  = 0; i < number.Length; i++)
             {
-                string maskedPart = new string(poundSign, number.Length - visibleDigits);
-                string lastDigits = number.Substring(number.Length - visibleDigits);
-                string result = maskedPart + lastDigits;
-
-                resultLbl.Text = result;
+                if (char.IsDigit(number[i]))
+                {
+                    totalDigits++;
+                }
             }
+
+            // number of digits to mask
+            int maskedDigits = totalDigits - 4;
+
+            int digitCount = 0;
+
+            for (int i = 0; i < number.Length; i++)
+            {
+                if (char.IsDigit(number[i]))
+                {
+                    if (digitCount < maskedDigits)
+                    {
+                        resultLbl.Text += '#';
+                    }
+                    else
+                    {
+                        resultLbl.Text += number[i];
+                    }
+
+                    digitCount++;
+                }
+                else
+                {
+                    resultLbl.Text += number[i];
+                }
+            }
+
+
+            numberInput.Text = string.Empty;
         }
     }
 }

@@ -56,9 +56,8 @@
             this.resultLbl.AutoSize = true;
             this.resultLbl.Location = new System.Drawing.Point(116, 212);
             this.resultLbl.Name = "resultLbl";
-            this.resultLbl.Size = new System.Drawing.Size(90, 20);
+            this.resultLbl.Size = new System.Drawing.Size(0, 20);
             this.resultLbl.TabIndex = 2;
-            this.resultLbl.Text = "574839383";
             // 
             // Form1
             // 
