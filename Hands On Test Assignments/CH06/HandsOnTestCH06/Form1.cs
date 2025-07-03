@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,58 +61,60 @@ namespace HandsOnTestCH06
                 authorLbl.Text = authors[index];
                 isbnLbl.Text = isbns[index];
             }
+            else
+            {
+                nameLbl.Text = "Item not found";
+                descLbl.Text = "Item not found";
+                authorLbl.Text = "Item not found";
+                isbnLbl.Text = "Item not found";
+            }
+
         }
 
         private int SearchByAuthor(string authorName)
         {
-            bool isBookFound = false;
-
-            int index = -1;
-
-            for (int i = 0; i < authors.Count && !isBookFound; i++)
+            for (int i = 0; i < authors.Count; i++)
             {
                 if (authors[i].ToLower().Contains(authorName.ToLower()))
                 {
-                   
-                    index = i;
+                    return i;
                 }
             }
 
-            return index;
+            return -1;
         }
 
         private int SearchByIsbn(string isbnNumber)
-        {
-            bool isBookFound = false;
+        { 
+            //    bool isBookFound = false;
+            //    int index = -1;
 
-            int index = -1;
-
-            for (int i = 0;i < isbns.Count && !isBookFound; i++)
+            for (int i = 0;i < isbns.Count; i++)
             {
                 if (isbns[i].ToLower() == isbnNumber.ToLower())
                 {
-                    index = i;
+                    return i;
                 }
             }
 
-            return index;
+            return -1;  
         }
 
         private int SearchByKeyword(string keyword)
         {
-            bool isBookFound = false;
+            //bool isBookFound = false;
 
-            int index = -1;
+            //int index = -1;
             
-            for (int i = 0; i < keywords.Count && !isBookFound ; i++)
+            for (int i = 0; i < keywords.Count; i++)
             {
-                if (keywords[i].ToLower().Contains(keyword.ToLower()) || authors[i].ToLower().Contains(keyword.ToLower()))
+                if (keywords[i].ToLower().Contains(keyword.ToLower()) || titles[i].ToLower().Contains(keyword.ToLower()))
                 {
-                    index = i;
+                    return i;
                 } 
             }
 
-            return index;
+            return -1;
         }
 
         private void authorSearchBtn_Click(object sender, EventArgs e)
