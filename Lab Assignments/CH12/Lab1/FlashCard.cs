@@ -13,44 +13,44 @@ namespace Lab1
         private string _term;
         private string _definition;
 
-        public string Term
+        //public string Term
+        //{
+        //    get => _term;
+        //    set => _term = value;
+        //}
+
+        //public string Definition
+        //{
+        //    get => _definition;
+        //    set => _definition = value;
+        //}
+
+
+        public FlashCard(string term, string definition)
         {
-            get => _term;
-            set => _term = value;
+            _term = term;
+            _definition = definition;
         }
 
-        public string Definition
+        public void SetTerm(string term)
         {
-            get => _definition;
-            set => _definition = value;
+            _term = term;
         }
 
-        //constructor
-        //public FlashCard(string term ,string definition)
-        //{
-        //    _term = term;
-        //    _definition = definition;
-        //}
+        public void SetDefinition(string definition)
+        {
+            _definition = definition;
+        }
 
-        //public void SetTerm(string term)
-        //{
-        //    _term = term;
-        //}
-        
-        //public void SetDefinition(string definition)
-        //{
-        //    _definition = definition;
-        //}
+        public string GetTerm()
+        {
+            return _term;
+        }
 
-        //public string GetTerm()
-        //{
-        //    return _term;
-        //}
-
-        //public string GetDefinition()
-        //{
-        //    return _definition;
-        //}
+        public string GetDefinition()
+        {
+            return _definition;
+        }
 
     } 
 }
