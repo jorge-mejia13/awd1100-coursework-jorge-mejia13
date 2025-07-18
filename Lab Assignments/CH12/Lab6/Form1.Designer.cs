@@ -35,10 +35,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lengthInput = new System.Windows.Forms.TextBox();
             this.addBtn = new System.Windows.Forms.Button();
-            this.roomsLbl = new System.Windows.Forms.Label();
-            this.totalBoxesLbl = new System.Windows.Forms.Label();
+            this.roomsCountLbl = new System.Windows.Forms.Label();
+            this.totalBoxesNeededLbl = new System.Windows.Forms.Label();
             this.roomLbl = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.roomsList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -99,51 +99,51 @@
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
-            // roomsLbl
+            // roomsCountLbl
             // 
-            this.roomsLbl.AutoSize = true;
-            this.roomsLbl.Location = new System.Drawing.Point(109, 161);
-            this.roomsLbl.Name = "roomsLbl";
-            this.roomsLbl.Size = new System.Drawing.Size(46, 13);
-            this.roomsLbl.TabIndex = 7;
-            this.roomsLbl.Text = "Rooms: ";
+            this.roomsCountLbl.AutoSize = true;
+            this.roomsCountLbl.Location = new System.Drawing.Point(109, 161);
+            this.roomsCountLbl.Name = "roomsCountLbl";
+            this.roomsCountLbl.Size = new System.Drawing.Size(46, 13);
+            this.roomsCountLbl.TabIndex = 7;
+            this.roomsCountLbl.Text = "Rooms: ";
             // 
-            // totalBoxesLbl
+            // totalBoxesNeededLbl
             // 
-            this.totalBoxesLbl.AutoSize = true;
-            this.totalBoxesLbl.Location = new System.Drawing.Point(109, 187);
-            this.totalBoxesLbl.Name = "totalBoxesLbl";
-            this.totalBoxesLbl.Size = new System.Drawing.Size(107, 13);
-            this.totalBoxesLbl.TabIndex = 8;
-            this.totalBoxesLbl.Text = "Total Boxes Needed:";
+            this.totalBoxesNeededLbl.AutoSize = true;
+            this.totalBoxesNeededLbl.Location = new System.Drawing.Point(109, 187);
+            this.totalBoxesNeededLbl.Name = "totalBoxesNeededLbl";
+            this.totalBoxesNeededLbl.Size = new System.Drawing.Size(107, 13);
+            this.totalBoxesNeededLbl.TabIndex = 8;
+            this.totalBoxesNeededLbl.Text = "Total Boxes Needed:";
             // 
             // roomLbl
             // 
             this.roomLbl.AutoSize = true;
             this.roomLbl.Location = new System.Drawing.Point(109, 246);
             this.roomLbl.Name = "roomLbl";
-            this.roomLbl.Size = new System.Drawing.Size(66, 13);
+            this.roomLbl.Size = new System.Drawing.Size(0, 13);
             this.roomLbl.TabIndex = 9;
-            this.roomLbl.Text = "Living Room";
             // 
-            // label5
+            // roomsList
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(109, 276);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Office";
+            this.roomsList.BackColor = System.Drawing.SystemColors.Window;
+            this.roomsList.FormattingEnabled = true;
+            this.roomsList.Location = new System.Drawing.Point(112, 235);
+            this.roomsList.Name = "roomsList";
+            this.roomsList.Size = new System.Drawing.Size(198, 95);
+            this.roomsList.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.roomsList);
             this.Controls.Add(this.roomLbl);
-            this.Controls.Add(this.totalBoxesLbl);
-            this.Controls.Add(this.roomsLbl);
+            this.Controls.Add(this.totalBoxesNeededLbl);
+            this.Controls.Add(this.roomsCountLbl);
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.lengthInput);
             this.Controls.Add(this.label3);
@@ -167,10 +167,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox lengthInput;
         private System.Windows.Forms.Button addBtn;
-        private System.Windows.Forms.Label roomsLbl;
-        private System.Windows.Forms.Label totalBoxesLbl;
+        private System.Windows.Forms.Label roomsCountLbl;
+        private System.Windows.Forms.Label totalBoxesNeededLbl;
         private System.Windows.Forms.Label roomLbl;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox roomsList;
     }
 }
 

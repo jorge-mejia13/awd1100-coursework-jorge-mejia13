@@ -40,6 +40,15 @@ namespace Lab3
         {
             return _balance;
         }
- 
+
+        public void MakeDeposit(decimal amount)
+        {
+            _balance += amount;
+        }
+
+        public void MakeWithdrawal(decimal amount)
+        {
+            _balance -= amount;
+        }
     }
 }

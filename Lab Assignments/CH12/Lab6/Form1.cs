@@ -19,6 +19,7 @@ namespace Lab6
         }
 
         int count = 0;
+        int totalBoxesCounter = 0;
         int index = -1;
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -34,12 +35,17 @@ namespace Lab6
                     rooms[i] = new Room(name, width, length);
                     count++;
                     index = i;
+                    roomsList.Items.Add(rooms[i].Display());
+                    totalBoxesCounter = totalBoxesCounter + rooms[i].Boxes;
                     break;
                 }
             }
 
-            roomsLbl.Text = $"{count}/20";
-            roomLbl.Text = rooms[index].Display();
+            roomsCountLbl.Text = $"Rooms: {count}/20";
+            totalBoxesNeededLbl.Text = $"Total Boxes Needed: {totalBoxesCounter}";
+            nameInput.Text = string.Empty;
+            widthInput.Text = string.Empty; 
+            lengthInput.Text = string.Empty;
         }
     }
 }

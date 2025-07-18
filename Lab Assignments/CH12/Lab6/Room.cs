@@ -21,6 +21,8 @@ namespace Lab6
             _name = name;
             _width = width;
             _length = length;
+            _area = _width * _length;
+            _boxes = (_area / 12) + 1;
         }
 
         // method
@@ -49,7 +51,7 @@ namespace Lab6
         {
            get
            {
-                return _width * _length;
+                return _area;
            }
         }
 
@@ -57,7 +59,7 @@ namespace Lab6
         {
             get
             {
-                return (_area / 12) + 2;
+                return _boxes;
             }
         }
     }

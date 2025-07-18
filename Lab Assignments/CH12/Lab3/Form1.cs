@@ -69,47 +69,22 @@ namespace Lab3
         {
             decimal depositAmount = decimal.Parse(depositInput.Text);
 
-            MakeDeposit(depositAmount);
-        }
+            accounts[currentIndex].MakeDeposit(depositAmount);
 
+            balanceLbl.Text = $"Your account balance is: ${accounts[currentIndex].GetBalance()}";
 
-        private void MakeDeposit(decimal amount)
-        {
-            if (currentIndex != -1)
-            {
-                decimal currentBalance = accounts[currentIndex].GetBalance();
-                decimal newBalance = currentBalance + amount;
-                balanceLbl.Text = $"Your account balance is: ${newBalance.ToString()}";
-                depositInput.Text = string.Empty;
-            }
-            else
-            {
-                welcomeLbl.Text = "User not found";
-            }
+            depositInput.Text = string.Empty;
         }
 
         private void withdrawBtn_Click(object sender, EventArgs e)
         {
             decimal withdraAmount = decimal.Parse(withdrawInput.Text);
 
-            MakeWithdrawal(withdraAmount);
+            accounts[currentIndex].MakeWithdrawal(withdraAmount);
+
+            balanceLbl.Text = $"Your account balance is: ${accounts[currentIndex].GetBalance()}";
+
+            withdrawInput.Text = string.Empty;
         }
-
-        private void MakeWithdrawal(decimal amount)
-        {
-            if (currentIndex != -1)
-            {
-                decimal currentBalance = accounts[currentIndex].GetBalance();
-                decimal newBalance = currentBalance - amount;
-                balanceLbl.Text = $"Your account balance is: ${newBalance.ToString()}";
-                withdrawInput.Text = string.Empty;
-            }
-            else
-            {
-                welcomeLbl.Text = "User not found";
-            }
-        }
-
-
     }
 }
