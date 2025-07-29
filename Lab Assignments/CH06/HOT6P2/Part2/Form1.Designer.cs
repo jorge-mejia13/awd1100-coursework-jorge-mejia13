@@ -45,6 +45,7 @@
             this.subtotalLbl = new System.Windows.Forms.Label();
             this.taxLbl = new System.Windows.Forms.Label();
             this.totalLbl = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -204,11 +205,20 @@
             this.totalLbl.TabIndex = 16;
             this.totalLbl.Text = "Total: $0";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(572, 430);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(0, 20);
+            this.label5.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 564);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.totalLbl);
             this.Controls.Add(this.taxLbl);
             this.Controls.Add(this.subtotalLbl);
@@ -252,6 +262,7 @@
         private System.Windows.Forms.Label subtotalLbl;
         private System.Windows.Forms.Label taxLbl;
         private System.Windows.Forms.Label totalLbl;
+        private System.Windows.Forms.Label label5;
     }
 }
 
