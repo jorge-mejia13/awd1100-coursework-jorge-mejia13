@@ -20,6 +20,8 @@ namespace Lab2
             InitializeComponent();
         }
 
+       
+        int attendeesCount = 0;
 
 
         private void addBtn_Click(object sender, EventArgs e)
@@ -46,6 +48,9 @@ namespace Lab2
 
             // displays new conference
             displayLbl.Text += $"\n{conference.Display()}\n";
+            conferenceLbl.Text = $"Conferences: {conferences.Count}/20";
+            attendeesCount += conference.Attendees;
+            attendeesLbl.Text = $"Attendees: {attendeesCount}";
             
             // clears out the inputs
             groupNameInput.Text = String.Empty;
@@ -59,17 +64,16 @@ namespace Lab2
             string beginDate = beginInput.Text;
             string endDate = endInput.Text;
 
+            displayLbl.Text = String.Empty;
+
             for (int i = 0; i < conferences.Count; i++)
             {
                 if (conferences[i].StartingDate >= DateTime.Parse(beginDate) && conferences[i].StartingDate <= DateTime.Parse(endDate))
                 {
                     displayLbl.Text += $"\n{conferences[i].Display()}\n";
                 }
-                else
-                {
-                    displayLbl.Text = "No conferences found";
-                }
             }
+
         }
     }
 }
