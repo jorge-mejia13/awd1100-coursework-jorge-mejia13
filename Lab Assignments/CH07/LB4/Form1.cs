@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,8 +23,13 @@ namespace LB4
             try
             {
                 DecoderRing ring = new DecoderRing();
+                ring.Shift = int.Parse(shiftInput.Text);
+
                 string encodeText = encodeInput.Text;
-                string output = ring.Decode(encodeText);
+                string output = ring.Encode(encodeText);
+
+                decodeInput.Text = output;
+                encodeInput.Text = string.Empty;
             }
             catch (InvalidCharacterException ex)
             {
@@ -36,8 +42,14 @@ namespace LB4
             try
             {
                 DecoderRing ring = new DecoderRing();
-                string encodeText = encodeInput.Text;
-                string output = ring.Decode(encodeText);
+                ring.Shift = int.Parse(shiftInput.Text);
+
+                string decodeText = decodeInput.Text;
+                string output = ring.Decode(decodeText);
+
+                encodeInput.Text = output;
+                decodeInput.Text = string.Empty;
+
             }
             catch (InvalidCharacterException ex)
             {

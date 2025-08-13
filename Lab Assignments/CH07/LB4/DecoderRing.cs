@@ -69,6 +69,9 @@ namespace LB4
                     throw new InvalidCharacterException("Invalid Shift");
                 }
                 _shift = value;
+
+                _innerRing = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                _outerRing = _innerRing.Substring(_shift) + _innerRing.Substring(0, _shift);
             }
         }
     }
